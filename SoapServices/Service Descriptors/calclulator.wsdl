@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/calclulator/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="calclulator" targetNamespace="http://www.tibco.com/calclulator/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tibco.com/calclulator/">
+      <xsd:element name="Addition">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="A" type="xsd:int" />
+          	<xsd:element name="B" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AdditionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="C" type="xsd:int"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Subtraction">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="A" type="xsd:int"></xsd:element>
+      			<xsd:element name="B" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SubtractionResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="C" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Multiplication">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="A" type="xsd:int"></xsd:element>
+      			<xsd:element name="B" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MultiplicationResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="C" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AdditionRequest">
+    <wsdl:part element="tns:Addition" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AdditionResponse">
+    <wsdl:part element="tns:AdditionResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractionRequest">
+  	<wsdl:part name="parameters" element="tns:Subtraction"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SubtractionResponse">
+  	<wsdl:part name="parameters" element="tns:SubtractionResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MultiplicationRequest">
+  	<wsdl:part name="parameters" element="tns:Multiplication"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MultiplicationResponse">
+  	<wsdl:part name="parameters" element="tns:MultiplicationResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="calclulator">
+    <wsdl:operation name="Addition">
+      <wsdl:input message="tns:AdditionRequest" name="Request"/>
+      <wsdl:output message="tns:AdditionResponse" name="Response"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subtraction">
+    	<wsdl:input message="tns:SubtractionRequest" name="Request"></wsdl:input>
+    	<wsdl:output message="tns:SubtractionResponse" name="Rseponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiplication">
+    	<wsdl:input message="tns:MultiplicationRequest" name="Request"></wsdl:input>
+    	<wsdl:output message="tns:MultiplicationResponse" name="Response"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="calclulatorSOAP" type="tns:calclulator">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Addition">
+      <soap:operation soapAction="http://www.tibco.com/calclulator/Addition"/>
+      <wsdl:input name="Request">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="calclulator">
+    <wsdl:port binding="tns:calclulatorSOAP" name="calclulatorSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

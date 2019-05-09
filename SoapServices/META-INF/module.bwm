@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:calclulator="http://www.tibco.com/calclulator/" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_87aqgHIiEem3H8bAY-vkhQ" targetNamespace="http://tns.tibco.com/bw/composite/SoapServices" name="SoapServices" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_pzN_sHIkEem3H8bAY-vkhQ" name="calclulator" promote="Componentcalclulator/calclulator">
+    <sca:interface.wsdl xmi:id="_pzg6oHIkEem3H8bAY-vkhQ" interface="http://www.tibco.com/calclulator/#wsdl.interface(calclulator)" scaext:wsdlLocation="../Service%20Descriptors/calclulator.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_pzqroHIkEem3H8bAY-vkhQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/89fd9badf7b447f882d009bc7aa0cc49/SOAPServiceBinding" portTypeQName="calclulator:calclulator" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+      <bindingType xmi:id="_pz9mkHIkEem3H8bAY-vkhQ"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_AGxhUHIlEem3H8bAY-vkhQ" endpointURI="/SOAPServiceBinding/calclulator/" httpConnector="soapservices.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_pz9mkXIkEem3H8bAY-vkhQ" operationName="Addition" action="Addition" actionNeeded="true">
+        <bindingType xmi:id="_pz9mknIkEem3H8bAY-vkhQ"/>
+        <messageConfiguration xmi:id="_pz9mk3IkEem3H8bAY-vkhQ" messageQName="calclulator:AdditionRequest" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9mlHIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:Addition"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_pz9mlXIkEem3H8bAY-vkhQ" messageQName="calclulator:AdditionResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9mlnIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:AdditionResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_pz9mo3IkEem3H8bAY-vkhQ">
+          <inputMapping xmi:id="_p0HXkHIkEem3H8bAY-vkhQ"/>
+          <outputMapping xmi:id="_p0HXkXIkEem3H8bAY-vkhQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_pz9ml3IkEem3H8bAY-vkhQ" operationName="Subtraction" action="Subtraction" actionNeeded="true">
+        <bindingType xmi:id="_pz9mmHIkEem3H8bAY-vkhQ"/>
+        <messageConfiguration xmi:id="_pz9mmXIkEem3H8bAY-vkhQ" messageQName="calclulator:SubtractionRequest" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9mmnIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:Subtraction"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_pz9mm3IkEem3H8bAY-vkhQ" messageQName="calclulator:SubtractionResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9mnHIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:SubtractionResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_p0HXknIkEem3H8bAY-vkhQ">
+          <inputMapping xmi:id="_p0HXk3IkEem3H8bAY-vkhQ"/>
+          <outputMapping xmi:id="_p0HXlHIkEem3H8bAY-vkhQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_pz9mnXIkEem3H8bAY-vkhQ" operationName="Multiplication" action="Multiplication" actionNeeded="true">
+        <bindingType xmi:id="_pz9mnnIkEem3H8bAY-vkhQ"/>
+        <messageConfiguration xmi:id="_pz9mn3IkEem3H8bAY-vkhQ" messageQName="calclulator:MultiplicationRequest" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9moHIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:Multiplication"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_pz9moXIkEem3H8bAY-vkhQ" messageQName="calclulator:MultiplicationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/SoapServices/Service%20Descriptors/calclulator.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_pz9monIkEem3H8bAY-vkhQ" partName="parameters" partElementName="calclulator:MultiplicationResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_p0HXlXIkEem3H8bAY-vkhQ">
+          <inputMapping xmi:id="_p0HXlnIkEem3H8bAY-vkhQ"/>
+          <outputMapping xmi:id="_p0HXl3IkEem3H8bAY-vkhQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_p0HXmHIkEem3H8bAY-vkhQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="__EcMgHIiEem3H8bAY-vkhQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__EtSQHIiEem3H8bAY-vkhQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__EyKwHIiEem3H8bAY-vkhQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__E5fgHIiEem3H8bAY-vkhQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__E-YAHIiEem3H8bAY-vkhQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="__FDQgHIiEem3H8bAY-vkhQ" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="__FIJAHIiEem3H8bAY-vkhQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_D30xEHIlEem3H8bAY-vkhQ" name="/HTTPConnection/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_KEr78HIlEem3H8bAY-vkhQ" name="/HTTPConnection/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_py7EwHIkEem3H8bAY-vkhQ" name="Componentcalclulator" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_py7EwXIkEem3H8bAY-vkhQ" processName="soapservices.calclulator"/>
+    <sca:service xmi:id="_pzEOsHIkEem3H8bAY-vkhQ" name="calclulator">
+      <sca:interface.wsdl xmi:id="_pzEOsXIkEem3H8bAY-vkhQ" interface="http://www.tibco.com/calclulator/#wsdl.interface(calclulator)" scaext:wsdlLocation="../Service%20Descriptors/calclulator.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
